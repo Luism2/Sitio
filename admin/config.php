@@ -1,6 +1,6 @@
 <?php 
 
-define('RUTA', 'http://localhost/PRACTICAS/blog/');
+define('RUTA', 'http://localhost/PRACTICAS/Sitio/');
 
 $bd_config = array(
     'basedatos' => 'blog_practica', 

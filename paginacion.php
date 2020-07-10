@@ -18,7 +18,7 @@
 
      <?php endfor; ?>
 
-     <?php if(): ?>
+     <?php if(pagina_actual() == $numero_paginas): ?>
         <li class="disabled">&raquo;</li>
      <?php else:?>
         <li><a href="index.php?p=<?php echo pagina_actual() + 1; ?>">&raquo;</a></li>

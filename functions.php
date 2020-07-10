@@ -55,12 +55,12 @@ function fecha($fecha){
 
     $fecha = "$dia de " . $meses[$mes] . " del $year";
     return $fecha;
-
 }
 
-function comprobarSession(){
-    if (!isset($_SESSION['admin'])){
-        header('Location: '. RUTA);
+function comprobarSession() {
+    if (!isset($_SESSION['admin'])) {
+        header('Location: ' . RUTA);
     }
 }
+
 ?>
