@@ -11,6 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         header('Location:' .RUTA. '/admin');
     }
 }
-require 'views/login.views.php';
+require 'views/login.view.php';
 
 ?>

@@ -5,7 +5,7 @@ require '../functions.php';
 
 comprobarSession();
 
-$conexion =conexion($bd_config);
+$conexion = conexion($bd_config);
 if(!$conexion){
     header('Location: ../error.php');
 }

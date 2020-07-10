@@ -3,16 +3,16 @@
 require 'config.php';
 require '../functions.php';
 
-$conecxion= conexion($bd_config);
+$conexion= conexion($bd_config);
 
 comprobarSession();
 
 //comprobar secion
-if(!$conecxion){
+if(!$conexion){
     header('Location:../error.php');
 }
 
-$posts= obtener_post($blog_config['post_por_pagina'], $conecxion);
+$posts= obtener_post($blog_config['post_por_pagina'], $conexion);
 
 require '../views/admin_index.view.php';
 

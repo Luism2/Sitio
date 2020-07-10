@@ -14,13 +14,13 @@ if ($_SERVER ['REQUEST_METHOD'] == 'GET' && !empty($_GET['busqueda'])) {
     $statement = $conexion->prepare(
         'SELECT * FROM articulos WHERE titulo LIKE :busqueda or texto LIKE :busqueda'
     );
-    $statement->execute(array(':busqueda' => "%$busqueda"));
-    $resutados = $statement->fechAll();
+    $statement->execute(array(':busqueda' => "%$busqueda%"));
+    $resultados = $statement->fetchAll();
 
     if (empty($resutados)) {
         $titulo ='Lo sentimos mucho no se encontraron articulos similares con su busqueda :' . $busqueda;
     } else{
-        $titulo = 'Resultados de busqueda' . $busqueda;
+        $titulo = 'Resultados de busqueda: ' . $busqueda;
     }
 } else {
     header('Location'. RUTA . '/index.php');
