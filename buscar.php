@@ -8,7 +8,7 @@ if (!$conexion) {
     header('Location: error.php');
 }
 
-if ($_SERVER ['REQUEST_METHOD'] == 'GET' && !empty($_GET['busqueda'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET['busqueda'])) {
     $busqueda = limpiarDatos($_GET['busqueda']);
     
     $statement = $conexion->prepare(
@@ -17,8 +17,8 @@ if ($_SERVER ['REQUEST_METHOD'] == 'GET' && !empty($_GET['busqueda'])) {
     $statement->execute(array(':busqueda' => "%$busqueda%"));
     $resultados = $statement->fetchAll();
 
-    if (empty($resutados)) {
-        $titulo ='Lo sentimos mucho no se encontraron articulos similares con su busqueda :' . $busqueda;
+    if (empty($resultados)) {
+        $titulo = 'Lo sentimos mucho no se encontraron articulos similares con su busqueda: ' . $busqueda;
     } else{
         $titulo = 'Resultados de busqueda: ' . $busqueda;
     }
