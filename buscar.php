@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET['busqueda'])) {
     $resultados = $statement->fetchAll();
 
     if (empty($resultados)) {
-        $titulo = 'Lo sentimos mucho no se encontraron articulos similares con su busqueda: ' . $busqueda;
+        $titulo = 'Lo sentimos mucho, pero no se encontraron articulos similares con: ' . $busqueda;
     } else{
         $titulo = 'Resultados de busqueda: ' . $busqueda;
     }

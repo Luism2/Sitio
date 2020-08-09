@@ -1,4 +1,5 @@
 <?php session_start();
+
 require 'config.php';
 require '../functions.php';
 
@@ -9,15 +10,15 @@ if(!$conexion){
     header('Location: ../error.php');
 }
 
-if($_SERVER['REQUES_METHOD'] == 'POST') {
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $titulo = limpiarDatos($_POST['titulo']);
-    $texto = $_POST['texto'];
     $extracto = limpiarDatos($_POST['extracto']);
+    $texto = $_POST['texto'];   
     $id = limpiarDatos($_POST['id']);
     $thumb_guardada = $_POST['thumb-guardada'];
     $thumb = $_FILES['thumb'];
 
-    if (empty($thumb['name'])){
+    if (empty($thumb['name'])) {
         $thumb = $thumb_guardada;
     } else {
         $archivo_subido = '../' . $blog_config['carpeta_imagenes'] . $_FILES['thumb']['name'];
@@ -26,15 +27,15 @@ if($_SERVER['REQUES_METHOD'] == 'POST') {
     }
 
     $statement = $conexion->prepare(
-        'UPDATE articulos SET titulo = :titulo, extracto = :extracto, texto = :texto, thumb = : thumb WHERE id = :id'
+        'UPDATE articulos SET titulo = :titulo, extracto = :extracto, texto = :texto, thumb = :thumb WHERE id = :id'
     );
 
     $statement->execute(array(
-     ':titulo'=> $titulo,
-     ':extracto'=> $extracto,
-     ':texto'=> $texto,
-     ':thumb'=> $thumb,
-     ':id'=> $id
+     ':titulo' => $titulo,
+     ':extracto' => $extracto,
+     ':texto' => $texto,
+     ':thumb' => $thumb,
+     ':id' => $id
     ));
 
     header('Location: ' . RUTA . '/admin');
@@ -50,10 +51,10 @@ if($_SERVER['REQUES_METHOD'] == 'POST') {
     if(!$post){
         header('Location:' . RUTA . '/admin');
     }
-    print_r(!$post);
-    $post= $post[0];
+
+    $post = $post[0];
 }
 
-require '../views/editar.views.php';
+require '../views/editar.view.php';
 
 ?>

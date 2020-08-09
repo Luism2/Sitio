@@ -35,5 +35,5 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
    header('Location: '. RUTA . '/admin');
 }
 
-require '../views/admin_index.view.php';
+require '../views/nuevo.view.php';
 ?>

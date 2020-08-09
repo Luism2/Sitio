@@ -5,7 +5,7 @@ require '../functions.php';
 
 comprobarSession();
 
-$conexion =conexion ($bd_config);
+$conexion = conexion($bd_config);
 if(!$conexion) {
     header('Location: ../error.php');
 }
@@ -17,8 +17,8 @@ if(!$id) {
 }
 
 $statement = $conexion->prepare('DELETE FROM articulos WHERE id = :id');
-$statement ->execute(array('id' => $id));
+$statement->execute(array('id' => $id));
 
-header('Loation: ' . RUTA . '/admin');
+header('Location: ' . RUTA . '/admin');
 
 ?>

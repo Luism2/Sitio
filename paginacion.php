@@ -1,4 +1,4 @@
-<?php $numero_paginas = numero_paginas($blog_config['post_por_pagina'], $conexion); ?>
+<?php $numero_paginas = numero_paginas($blog_config['post_por_pagina'], $conexion ); ?>
 <section class="paginacion">
     <ul>
         <?php if (pagina_actual() === 1): ?>
