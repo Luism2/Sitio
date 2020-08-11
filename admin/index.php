@@ -5,7 +5,7 @@ require '../functions.php';
 
 $conexion = conexion($bd_config);
 
-//comprobar secion
+//comprobar sesion
 comprobarSession();
 
 if(!$conexion) {

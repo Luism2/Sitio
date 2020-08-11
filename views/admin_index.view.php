@@ -1,4 +1,4 @@
-<?php require '../views/header.php'; ?>
+<?php require 'header.php'; ?>
 
     <div class="contenedor">
             <h2>panel de control</h2>
@@ -19,4 +19,4 @@
         <?php require '../paginacion.php'; ?>
     </div>
 
-<?php require '../views/footer.php'; ?>
+<?php require 'footer.php'; ?>
